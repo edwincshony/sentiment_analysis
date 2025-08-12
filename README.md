@@ -1,123 +1,106 @@
-# Sentiment Analysis
+# Sentiment Analysis Web App 🚀
 
-A web application for sentiment analysis built using Python.
+This is a **Sentiment Analysis Web Application** built using **FastAPI**, **Transformers (by Hugging Face)**, and **PyTorch**. It provides a simple web interface where users can input text and receive a sentiment prediction: **Positive**, **Negative**, or **Neutral**.
 
----
+## 🌟 Features
 
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- Sentiment classification using pre-trained transformer models
+- Clean and responsive web interface (via Jinja2 templates)
+- Fast API response using FastAPI
+- Supports both browser and API-based interactions
 
 ---
 
-## About
+## 📦 Requirements
 
-This project is a web-based sentiment analysis tool that allows users to input text and receive an analysis of the sentiment conveyed—such as positive, negative, or neutral. It leverages natural language processing techniques to provide meaningful insights into text data.
+Make sure you have Python 3.7 or above installed.
 
----
+Install the required dependencies:
 
-## Features
-
-- Input text for sentiment analysis
-- Displays sentiment results clearly on the web interface
-- Simple and user-friendly UI
-- Uses Python for backend processing
-- Flask web framework for routing and rendering
-- Responsive design with HTML and CSS
+```bash
+pip install fastapi uvicorn transformers torch jinja2 python-multipart
+````
 
 ---
 
-## Technologies Used
+## 🚀 How to Run the App
 
-- Python
-- Flask (Python Web Framework)
-- HTML
-- CSS
-- Natural Language Processing (NLP) libraries *(please specify the exact library used)*
+### 1. Clone the Repository
 
----
-
-## Installation
-
-1. **Clone the repository:**
-   ```
-   git clone https://github.com/edwincshony/sentiment_analysis.git
-   cd sentiment_analysis
-   ```
-
-2. **Create and activate a virtual environment (recommended):**
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-3. **Install required dependencies:**
-   ```
-   pip install -r requirements.txt
-   ```
-
-*Note:* If a `requirements.txt` file is not present, manually install:
+```bash
+git clone https://github.com/edwincshony/sentiment_analysis.git
+cd sentiment_analysis
 ```
-pip install flask
+
+### 2. Run the Application
+
+Run using `uvicorn`:
+
+```bash
+uvicorn app:app --reload
 ```
-and any NLP libraries required.
+
+If you face issues running the above, try:
+
+```bash
+python -m uvicorn app:app --reload
+```
+
+### 3. Access the Web App
+
+Open your browser and go to:
+[http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+### 4. API Access
+
+You can also test the API endpoint at:
+[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+This will bring up the Swagger UI where you can interact with the API directly.
 
 ---
 
-## Usage
-
-1. **Run the Flask app:**
-   ```
-   python app.py
-   ```
-
-2. **Open your browser** and go to:
-   ```
-   http://127.0.0.1:5000/
-   ```
-
-3. **Enter your text** in the input box and submit to view the sentiment analysis result.
-
----
-
-## Folder Structure
+## 📁 Project Structure
 
 ```
 sentiment_analysis/
 │
-├── app.py             # Main Flask application file
-├── templates/         # HTML templates
-├── static/            # CSS and static resources
-└── __pycache__/       # Auto-generated Python cache files
+├── app.py                # Main FastAPI application
+├── model.py              # Model loading and prediction logic
+├── templates/
+│   └── index.html        # HTML frontend template using Jinja2
+└── README.md             # You're here!
 ```
 
 ---
 
-## Contributing
+## 🧠 Model Info
 
-Contributions are welcome!  
-1. Fork this repository.  
-2. Create a new branch for your feature/fix.  
-3. Submit a pull request with clear descriptions of your changes.  
+The app uses a pre-trained sentiment analysis model from **Hugging Face Transformers**. The model is downloaded and cached automatically the first time the app runs.
 
 ---
 
-## License
+## 📬 Contact
 
-This project is open-source. You may add your chosen license here (e.g., MIT License).
+If you have questions or suggestions, feel free to open an issue or reach out!
 
 ---
 
-## Contact
+## 📄 License
 
-For any questions or feedback, please open an issue on GitHub or contact the repository owner.
+This project is open-source and available under the [MIT License](LICENSE).
 
-Do you want me to **add professional badges** (Python version, Flask version, License, etc.) to make it look more polished?
+---
+
+## 🙌 Acknowledgements
+
+* [FastAPI](https://fastapi.tiangolo.com/)
+* [Transformers by Hugging Face](https://huggingface.co/transformers/)
+* [PyTorch](https://pytorch.org/)
+
+```
+
+---
+
+Let me know if you'd like a badge section (for build, license, etc.), Docker instructions, or deployment steps for platforms like Heroku, Vercel, or Hugging Face Spaces.
+```
